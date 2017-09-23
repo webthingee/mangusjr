@@ -161,13 +161,13 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1412161687672666}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e1354988e70284fb18e301017965308c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 0.5
-  isMoving: 0
+  isMoving: 1
 --- !u!114 &114780365281858872
 MonoBehaviour:
   m_ObjectHideFlags: 1
