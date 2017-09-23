@@ -9,7 +9,8 @@ public class GameCtrl : MonoBehaviour {
 	public GameObject inGameCanvas;
     public GameObject HUD;
     public Text scoreDisplay;
-    
+    public Text healthDisplay;
+
     [SerializeField] int scoreTotal;
     public int Score
     {
@@ -29,6 +30,12 @@ public class GameCtrl : MonoBehaviour {
         inGameCanvas.SetActive(false);
         scoreTotal = ScoreChange = 0;
         Time.timeScale = 1f;
+    }
+
+    void Update ()
+    {
+        // @todo this is heavy handed.
+        healthDisplay.text = GameObject.Find("MagnusJR").GetComponent<CharacterAttr>().CharHealth.ToString();
     }
 
 	public void StartGame ()
