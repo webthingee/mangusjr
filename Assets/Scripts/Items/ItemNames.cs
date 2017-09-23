@@ -2,5 +2,6 @@
 {
     Coal,
     Bark,
-    Water
+    Water,
+	Stone
 }

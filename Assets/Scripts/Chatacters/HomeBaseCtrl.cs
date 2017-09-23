@@ -5,19 +5,25 @@ using UnityEngine;
 public class HomeBaseCtrl : MonoBehaviour {
 
 	public List<string> requestedItems = new List<string>();
-    public ItemNames itemNames;
+    GameCtrl gameCtrl;
+    HeroHoldingCtrl hhCtrl;
 
+    void Awake ()
+    {
+        gameCtrl = GameObject.Find("Game Manager").GetComponent<GameCtrl>();
+        hhCtrl = GameObject.Find("Hero Holding").GetComponent<HeroHoldingCtrl>();
+    }
     void Start ()
 	{
-        RequestedItemsCreate();
+        CreateRequestItemsList(2);
     }
 
-	void RequestedItemsCreate ()
+	void CreateRequestItemsList (int _numberOfItems)
 	{
-		CreateItem(ItemNames.Bark);
-		CreateItem(ItemNames.Coal);
-        //CreateItem("Oil");
-        //CreateItem("Water");
+		for (int i = 0; i < _numberOfItems; i++) {
+            var randItem = (ItemNames)Random.Range(0, System.Enum.GetValues(typeof(ItemNames)).Length) + 1;
+            CreateItem(ItemNames.Bark);
+        }
     }
 
 	void CreateItem (ItemNames _name) {
@@ -34,9 +40,7 @@ public class HomeBaseCtrl : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D other)
     {
         // hero enters the home base
-        if (other.tag == "Player")
-        {
-            Debug.Log(other.name);
+        if (other.tag == "Player") {
             InventoryDestroy();
         }
     }
@@ -44,18 +48,27 @@ public class HomeBaseCtrl : MonoBehaviour {
 	void InventoryDestroy ()
 	{
         // iterate through and build a list of the items for processing.
-        var heroItems = GameObject.Find("Hero Holding").GetComponent<HeroHoldingCtrl>().heroHolding;   
+        var heroItems = hhCtrl.heroHolding;   
+        
         for (int j = 0; j < heroItems.Count; j++) {
-			for (int i = 0; i < requestedItems.Count; i++) {
+
+            for (int i = 0; i < requestedItems.Count; i++) {
 				if (heroItems[j].itemName == requestedItems[i]) {
-					RemoveItem(requestedItems[i]);
-                    
-                    Destroy(heroItems[j].gameObject); 
-                    heroItems.Remove(heroItems[j]);
+                    // correct item
+                    RemoveItem(requestedItems[i]);
+                    heroItems[j].pointScored = 1;
                 }
-			}
+            }
+            DestroyItem(heroItems[j]);
 		}
+        
         InventoryScoring();
+    }
+
+    void DestroyItem (ItemCtrl _go)
+    {
+        gameCtrl.ScoreChange = _go.pointScored;
+        Destroy(_go.gameObject);
     }
 
     void InventoryScoring()
@@ -65,9 +78,9 @@ public class HomeBaseCtrl : MonoBehaviour {
         }
         else {
             Debug.Log("You Did It");
-            GameObject.Find("Game Manager").GetComponent<GameCtrl>().ScoreChange = 1;
-            GameObject.Find("Hero Holding").GetComponent<HeroHoldingCtrl>().heroHolding.Clear();
+            CreateRequestItemsList(2);
         }
+        hhCtrl.heroHolding.Clear();
     }
 
 }

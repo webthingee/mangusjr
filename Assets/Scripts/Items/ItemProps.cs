@@ -5,11 +5,12 @@ using UnityEngine;
 public class ItemProps : MonoBehaviour {
 
 	public string itemName;
-	public int itemCode;
+	public int pointScored;
 
-	void Awake()
+	void Awake ()
 	{
 		name = itemName;
+		pointScored = -1;
 	}
 
 }

@@ -6,7 +6,8 @@ public class ItemStore : MonoBehaviour {
 
     public GameObject itemToAdd;
 	public GameObject itemSprite;
-	public string giveItemName;
+	public ItemNames itemName;
+
     GameObject hh;
 
     void Awake ()
@@ -35,8 +36,8 @@ public class ItemStore : MonoBehaviour {
         Transform lastMember = hh.transform.GetChild(hh.transform.childCount - 1);
         // attach item
         GameObject item = (GameObject) Instantiate(itemToAdd, lastMember.position, Quaternion.identity, hh.transform);
-        item.GetComponent<ItemCtrl>().itemName = giveItemName;
-		item.name = giveItemName;
+        item.GetComponent<ItemCtrl>().itemName = itemName.ToString();
+		item.name = itemName.ToString();
         // attach sprite
         GameObject itemsprite = (GameObject)Instantiate(itemSprite, item.transform.position, Quaternion.identity, item.transform);
         // add to holding list
