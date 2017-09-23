@@ -14,13 +14,14 @@ public class ItemStore : MonoBehaviour {
         hh = GameObject.Find("Hero Holding");
     }
 
-    // void Update()
-    // {
-    //     if (Input.GetKeyDown(KeyCode.R))
-    //     {
-    //         AddItem();
-    //     }
-    // }
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Debug.Log(hh.transform.childCount - 1);
+            //AddItem();
+        }
+    }
 
     void OnTriggerExit2D(Collider2D other)
     {
@@ -32,7 +33,8 @@ public class ItemStore : MonoBehaviour {
 
     void AddItem()
     {
-        Transform lastMember = hh.transform.GetChild(transform.childCount);
+        Transform lastMember = hh.transform.GetChild(hh.transform.childCount - 1);
+
         GameObject item = (GameObject) Instantiate(itemToAdd, lastMember.position, Quaternion.identity, hh.transform);
         item.GetComponent<ItemCtrl>().itemName = giveItemName;
 		item.name = giveItemName;
