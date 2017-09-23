@@ -10,7 +10,7 @@ public class SpawnEnemy : MonoBehaviour {
 
     void Start () 
 	{
-		StartCoroutine(SpawnEnemyDude(20f));
+		StartCoroutine(SpawnEnemyDude(30f));
 	}
 	
 	IEnumerator SpawnEnemyDude (float _waitTime)
@@ -20,6 +20,6 @@ public class SpawnEnemy : MonoBehaviour {
         enemy.GetComponent<CharacterAttr>().CharName = "wannagetid";
 
 		yield return new WaitForSeconds(_waitTime);
-		StartCoroutine(SpawnEnemyDude(20f));
+		StartCoroutine(SpawnEnemyDude(30f));
     }
 }

@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 50433713465867002}
   - component: {fileID: 114105066816911370}
   - component: {fileID: 114872630099846006}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 4387963926357866}
   - component: {fileID: 58333479539541206}
   - component: {fileID: 114822823634558702}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Target Zone
   m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4976941503063344}
   - component: {fileID: 212744283208818306}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SuperStar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
