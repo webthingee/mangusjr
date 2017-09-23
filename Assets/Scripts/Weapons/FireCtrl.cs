@@ -20,6 +20,12 @@ public class FireCtrl : MonoBehaviour {
         {
             Shoot(other.gameObject);
         }
+
+        if (this.transform.parent.tag == "Enemy" && other.tag == "Home")
+        {
+            this.transform.parent.GetComponent<EnemyMovement>().isMoving = false;
+            Shoot(other.gameObject);
+        }
     }
 
     void Shoot(GameObject _go)
