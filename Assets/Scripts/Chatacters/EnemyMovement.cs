@@ -11,7 +11,7 @@ public class EnemyMovement : MonoBehaviour {
 		if (isMoving) {
 			transform.position = Vector2.MoveTowards(
 				transform.position,
-				Vector2.zero,
+				GameObject.Find("Home Base").GetComponent<Transform>().position,
 				moveSpeed * Time.deltaTime
 			);
 		}
