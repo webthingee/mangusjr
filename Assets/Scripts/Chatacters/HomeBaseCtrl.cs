@@ -5,11 +5,6 @@ using UnityEngine;
 public class HomeBaseCtrl : MonoBehaviour {
 
 	public List<string> requestedItems = new List<string>();
-    public enum ItemNames {
-        Coal,
-        Bark,
-        Water
-    }
     public ItemNames itemNames;
 
     void Start ()
