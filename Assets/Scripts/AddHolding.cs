@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class AddHolding : MonoBehaviour
 {
+	GameObject hh;
+
+	void Awake()
+	{
+		hh = GameObject.Find("Hero Holding");	
+	}
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		if (GetComponent<BasicMovement>().enabled != true) {
@@ -15,12 +21,13 @@ public class AddHolding : MonoBehaviour
 
     void AddItem ()
     {
-        transform.parent = GameObject.Find("Hero Holding").transform;
+        transform.parent = hh.transform;
+		hh.GetComponent<HeroHoldingCtrl>().heroHolding.Add(this.GetComponent<ItemCtrl>());
 	}
 
     void PositionItem()
     {
-        Transform lastMember = GameObject.Find("Hero Holding").transform.GetChild(transform.childCount - 1);
+        Transform lastMember = hh.transform.GetChild(transform.childCount - 1);
 		transform.position = lastMember.position;
     }
 
