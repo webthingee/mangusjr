@@ -8,15 +8,26 @@ public class GameCtrl : MonoBehaviour {
 
 	public GameObject inGameCanvas;
     public GameObject HUD;
-
-    public int scoreTotal;
     public Text scoreDisplay;
+    
+    [SerializeField] int scoreTotal;
+    public int Score
+    {
+        get { return scoreTotal; }
+    }
 
-	void Start ()
+    public int ScoreChange
+    {
+        set {
+            scoreTotal += value;
+            scoreDisplay.text = scoreTotal.ToString();
+        }
+    }
+    
+    void Start ()
 	{
         inGameCanvas.SetActive(false);
-        scoreTotal = 0;
-        scoreDisplay.text = scoreTotal.ToString();
+        scoreTotal = ScoreChange = 0;
         Time.timeScale = 1f;
     }
 

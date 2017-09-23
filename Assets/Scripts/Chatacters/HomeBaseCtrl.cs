@@ -5,22 +5,28 @@ using UnityEngine;
 public class HomeBaseCtrl : MonoBehaviour {
 
 	public List<string> requestedItems = new List<string>();
-	
-	void Start ()
+    public enum ItemNames {
+        Coal,
+        Bark,
+        Water
+    }
+    public ItemNames itemNames;
+
+    void Start ()
 	{
         RequestedItemsCreate();
     }
 
 	void RequestedItemsCreate ()
 	{
-		CreateItem("Rock");
-		CreateItem("Silver");
-        CreateItem("Oil");
-        CreateItem("Water");
+		CreateItem(ItemNames.Bark);
+		CreateItem(ItemNames.Coal);
+        //CreateItem("Oil");
+        //CreateItem("Water");
     }
 
-	void CreateItem (string _name) {
-        requestedItems.Add(_name);
+	void CreateItem (ItemNames _name) {
+        requestedItems.Add(_name.ToString());
 		GameObject.Find("HUD").GetComponent<HUDCtrl>().UpdateRequestList();
 	}
 
@@ -42,25 +48,31 @@ public class HomeBaseCtrl : MonoBehaviour {
 
 	void InventoryDestroy ()
 	{
-		// iterate through and build a list of the items for processing.
-		foreach (ItemCtrl item in GameObject.Find("Hero Holding").GetComponent<HeroHoldingCtrl>().heroHolding)
-		{
-            Debug.Log(item.itemName);
-
-			for (int i = 0; i < requestedItems.Count; i++)
-			{
-				if (item.itemName == requestedItems[i])
-                {
-                    Debug.Log("Taking Away " + requestedItems[i]);
+        // iterate through and build a list of the items for processing.
+        var heroItems = GameObject.Find("Hero Holding").GetComponent<HeroHoldingCtrl>().heroHolding;   
+        for (int j = 0; j < heroItems.Count; j++) {
+			for (int i = 0; i < requestedItems.Count; i++) {
+				if (heroItems[j].itemName == requestedItems[i]) {
 					RemoveItem(requestedItems[i]);
-				}
+                    
+                    Destroy(heroItems[j].gameObject); 
+                    heroItems.Remove(heroItems[j]);
+                }
 			}
-
-            Destroy(item.gameObject);
 		}
+        InventoryScoring();
+    }
 
-        GameObject.Find("HUD").GetComponent<HUDCtrl>().UpdateRequestList();
-        GameObject.Find("Hero Holding").GetComponent<HeroHoldingCtrl>().heroHolding.Clear();
+    void InventoryScoring()
+    {
+        if (requestedItems.Count > 0) {
+            Debug.Log("You Fool, That's Not Right!");
+        }
+        else {
+            Debug.Log("You Did It");
+            GameObject.Find("Game Manager").GetComponent<GameCtrl>().ScoreChange = 1;
+            GameObject.Find("Hero Holding").GetComponent<HeroHoldingCtrl>().heroHolding.Clear();
+        }
     }
 
 }
