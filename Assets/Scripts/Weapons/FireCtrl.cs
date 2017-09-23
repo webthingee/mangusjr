@@ -6,8 +6,9 @@ public class FireCtrl : MonoBehaviour {
 
     public GameObject bulletPrefab;
     public float shootDelay;
+    public GameObject target;
 
-    private float shootCountdown;
+    [SerializeField] float shootCountdown;
 
     void OnTriggerStay2D(Collider2D other)
     {
@@ -21,20 +22,23 @@ public class FireCtrl : MonoBehaviour {
             Shoot(other.gameObject);
         }
 
-        if (this.transform.parent.tag == "Enemy" && other.tag == "Home")
+        if (this.tag == "EnemyBullet" && other.tag == "Home")
         {
-            this.transform.parent.GetComponent<EnemyMovement>().isMoving = false;
+            Debug.Log(other.name);
             Shoot(other.gameObject);
         }
+
+        target = other.gameObject;
     }
 
-    void Shoot(GameObject _go)
+    public void Shoot(GameObject _go)
     {
         shootCountdown -= Time.deltaTime;
 
         if (shootCountdown <= 0)
         {
             GameObject iBullet = (GameObject)Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+            iBullet.tag = this.tag;
             iBullet.GetComponent<BulletCtrl>().FireAt(_go);
             shootCountdown = shootDelay;
         }

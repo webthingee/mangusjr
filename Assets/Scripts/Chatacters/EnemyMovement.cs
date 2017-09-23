@@ -16,4 +16,14 @@ public class EnemyMovement : MonoBehaviour {
 			);
 		}
 	}
+
+	void OnCollisionEnter2D(Collision2D other)
+	{
+        isMoving = false;
+    }
+
+    void OnCollisionExit2D(Collision2D other)
+    {
+        isMoving = true;
+    }
 }

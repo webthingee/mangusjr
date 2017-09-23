@@ -11,6 +11,23 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1406877408530454}
   m_IsPrefabParent: 1
+--- !u!1 &1166576146503152
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4029099164536008}
+  - component: {fileID: 58887361634925974}
+  - component: {fileID: 114965555032062184}
+  m_Layer: 0
+  m_Name: Target Zone
+  m_TagString: HeroBullet
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1406877408530454
 GameObject:
   m_ObjectHideFlags: 0
@@ -22,9 +39,10 @@ GameObject:
   - component: {fileID: 114685484030125470}
   - component: {fileID: 58669005514634548}
   - component: {fileID: 50849981680478264}
+  - component: {fileID: 114246746466317408}
   m_Layer: 0
   m_Name: MagnusJR
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,6 +63,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &4029099164536008
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1166576146503152}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4309689265365660}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4309689265365660
 Transform:
   m_ObjectHideFlags: 1
@@ -52,9 +83,10 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1406877408530454}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -2, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 4029099164536008}
   - {fileID: 4587940826563432}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -70,7 +102,7 @@ Transform:
   m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_Children: []
   m_Father: {fileID: 4309689265365660}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &50849981680478264
 Rigidbody2D:
@@ -106,7 +138,35 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.3
+--- !u!58 &58887361634925974
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1166576146503152}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 5
+--- !u!114 &114246746466317408
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1406877408530454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f2f06d981ba34e0db0322ed7a61233f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  charName: Magnus Jr
+  charHealth: 100
 --- !u!114 &114685484030125470
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -120,10 +180,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 0
   timeBetweenMoves: 0
-  moveDirection: 0
-  setDirection: 0
+  moveDirection: 1
+  setDirection: 1
   leaderMovedAt: {x: 0, y: 0, z: 0}
   moveVector: {x: 0, y: 0, z: 0}
+--- !u!114 &114965555032062184
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1166576146503152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69bb61b23936e4a90bce02767405501e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 1498102161215256, guid: bfa878577126c4ab5ba7612910cebb3c,
+    type: 2}
+  shootDelay: 0.5
+  target: {fileID: 0}
+  shootCountdown: 0
 --- !u!212 &212344828243355058
 SpriteRenderer:
   m_ObjectHideFlags: 1

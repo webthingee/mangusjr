@@ -15,14 +15,15 @@ public class HomeBaseCtrl : MonoBehaviour {
     }
     void Start ()
 	{
-        CreateRequestItemsList(2);
+        CreateRequestItemsList();
     }
 
-	void CreateRequestItemsList (int _numberOfItems)
+	void CreateRequestItemsList ()
 	{
-		for (int i = 0; i < _numberOfItems; i++) {
-            var randItem = (ItemNames)Random.Range(0, System.Enum.GetValues(typeof(ItemNames)).Length) + 1;
-            CreateItem(ItemNames.Bark);
+		int _numberOfItems = Random.Range(1, 6);
+        for (int i = 0; i < _numberOfItems; i++) {
+            var randItem = (ItemNames)Random.Range(0, System.Enum.GetValues(typeof(ItemNames)).Length);
+            CreateItem(randItem);
         }
     }
 
@@ -78,8 +79,18 @@ public class HomeBaseCtrl : MonoBehaviour {
         }
         else {
             Debug.Log("You Did It");
-            CreateRequestItemsList(2);
+            gameCtrl.GoalChange = 1;
+            GameObject.Find("MagnusJR").GetComponent<CharacterAttr>().CharHealthChange = 50;
+            gameCtrl.HUD.GetComponent<HUDCtrl>().itemsList.text = 
+            "Not Bad \n" +
+            "Eat this \n" +
+            "... health boost \n" +
+            "NOW GET ME..." 
+            ;
+            
+            Invoke("CreateRequestItemsList", 5f);
         }
+
         hhCtrl.heroHolding.Clear();
     }
 

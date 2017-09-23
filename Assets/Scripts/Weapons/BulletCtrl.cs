@@ -37,7 +37,16 @@ public class BulletCtrl : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player" || other.tag == "Enemy")
+        Debug.Log(other.name);
+        if (other.tag == "Enemy" && this.tag == "HeroBullet")
+        {
+            other.gameObject.GetComponent<CharacterAttr>().RemoveharHealth(1);
+        }
+        if (other.tag == "Player" && this.tag == "EnemyBullet")
+        {
+            other.gameObject.GetComponent<CharacterAttr>().RemoveharHealth(1);
+        }
+        if (other.tag == "Home" && this.tag == "EnemyBullet")
         {
             other.gameObject.GetComponent<CharacterAttr>().RemoveharHealth(1);
         }
