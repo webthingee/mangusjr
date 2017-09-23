@@ -12,7 +12,7 @@ public class AddHolding : MonoBehaviour
 	}
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		if (GetComponent<BasicMovement>().enabled != true) {
+		if (other.tag == "Player" && GetComponent<BasicMovement>().enabled != true) {
 			AddItem();
         	PositionItem();
         	EnableItem();		

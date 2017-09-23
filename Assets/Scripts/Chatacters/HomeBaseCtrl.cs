@@ -4,23 +4,12 @@ using UnityEngine;
 
 public class HomeBaseCtrl : MonoBehaviour {
 
-	public List<ItemCtrl> requestedItems = new List<ItemCtrl>();
-	
+	public List<string> requestedItems = new List<string>();
 	
 	void Start ()
 	{
         requestedItemsCreate();
-
     }
-
-	void OnTriggerEnter2D( Collider2D other)
-	{
-		// hero enters the home base
-		if (other.tag == "Player") {
-			Debug.Log(other.name);
-			InventoryDestroy();
-		}
-	}
 
 	void requestedItemsCreate ()
 	{
@@ -31,10 +20,18 @@ public class HomeBaseCtrl : MonoBehaviour {
     }
 
 	void createItem (string _name) {
-		ItemCtrl type = gameObject.AddComponent(typeof(ItemCtrl)) as ItemCtrl;
-        type.itemName = _name;
-        requestedItems.Add(type);
+        requestedItems.Add(_name);
 	}
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        // hero enters the home base
+        if (other.tag == "Player")
+        {
+            Debug.Log(other.name);
+            InventoryDestroy();
+        }
+    }
 
 	void InventoryDestroy ()
 	{
@@ -43,9 +40,9 @@ public class HomeBaseCtrl : MonoBehaviour {
 		{
             Debug.Log(item.itemName);
 
-			foreach (ItemCtrl request in requestedItems)
+			foreach (string request in requestedItems)
 			{
-				if (item.itemName == request.itemName) {
+				if (item.itemName == request) {
 					Debug.Log("HAZAAH");
 				}
 			}
@@ -56,4 +53,5 @@ public class HomeBaseCtrl : MonoBehaviour {
 
         GameObject.Find("Hero Holding").GetComponent<HeroHoldingCtrl>().heroHolding.Clear();
     }
+
 }

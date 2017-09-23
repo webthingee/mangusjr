@@ -7,4 +7,9 @@ public class ItemProps : MonoBehaviour {
 	public string itemName;
 	public int itemCode;
 
+	void Awake()
+	{
+		name = itemName;
+	}
+
 }
