@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameCtrl : MonoBehaviour {
 
 	public GameObject inGameCanvas;
+    public GameObject HUD;
 
 	void Start ()
 	{

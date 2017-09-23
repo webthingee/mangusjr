@@ -8,20 +8,27 @@ public class HomeBaseCtrl : MonoBehaviour {
 	
 	void Start ()
 	{
-        requestedItemsCreate();
+        RequestedItemsCreate();
     }
 
-	void requestedItemsCreate ()
+	void RequestedItemsCreate ()
 	{
-		createItem("Rock");
-		createItem("Silver");
-        createItem("Oil");
-        createItem("Water");
+		CreateItem("Rock");
+		CreateItem("Silver");
+        CreateItem("Oil");
+        CreateItem("Water");
     }
 
-	void createItem (string _name) {
+	void CreateItem (string _name) {
         requestedItems.Add(_name);
+		GameObject.Find("HUD").GetComponent<HUDCtrl>().UpdateRequestList();
 	}
+
+    void RemoveItem(string _name)
+    {
+        requestedItems.Remove(_name);
+        GameObject.Find("HUD").GetComponent<HUDCtrl>().UpdateRequestList();
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -40,17 +47,19 @@ public class HomeBaseCtrl : MonoBehaviour {
 		{
             Debug.Log(item.itemName);
 
-			foreach (string request in requestedItems)
+			for (int i = 0; i < requestedItems.Count; i++)
 			{
-				if (item.itemName == request) {
-					Debug.Log("HAZAAH");
+				if (item.itemName == requestedItems[i])
+                {
+                    Debug.Log("Taking Away " + requestedItems[i]);
+					RemoveItem(requestedItems[i]);
 				}
 			}
 
             Destroy(item.gameObject);
-
 		}
 
+        GameObject.Find("HUD").GetComponent<HUDCtrl>().UpdateRequestList();
         GameObject.Find("Hero Holding").GetComponent<HeroHoldingCtrl>().heroHolding.Clear();
     }
 
