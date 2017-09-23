@@ -35,7 +35,9 @@ public class GameCtrl : MonoBehaviour {
     void Update ()
     {
         // @todo this is heavy handed.
-        healthDisplay.text = GameObject.Find("MagnusJR").GetComponent<CharacterAttr>().CharHealth.ToString();
+        if (GameObject.Find("MagnusJR")) {
+            healthDisplay.text = GameObject.Find("MagnusJR").GetComponent<CharacterAttr>().CharHealth.ToString();
+        }
     }
 
 	public void StartGame ()
