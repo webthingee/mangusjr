@@ -10,6 +10,7 @@ public class AddHolding : MonoBehaviour
 	{
 		hh = GameObject.Find("Hero Holding");	
 	}
+	
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.tag == "Player" && GetComponent<BasicMovement>().enabled != true) {
