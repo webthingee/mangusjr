@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 95770113331067450}
   - component: {fileID: 70126550625356798}
   - component: {fileID: 114372967580029096}
+  - component: {fileID: 114135522478380840}
   m_Layer: 0
   m_Name: Fire
   m_TagString: Untagged
@@ -52,7 +53,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.02927351, y: -0.21467245}
@@ -75,6 +76,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114135522478380840
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1351703458553950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c639c3f131f74a90be5e3750efcc67b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flameOffset: 0
+  flameSpeed: 0
 --- !u!114 &114372967580029096
 MonoBehaviour:
   m_ObjectHideFlags: 1
