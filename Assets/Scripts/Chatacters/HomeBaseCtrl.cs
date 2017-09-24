@@ -24,12 +24,12 @@ public class HomeBaseCtrl : MonoBehaviour {
 
 	void CreateRequestItemsList ()
 	{
-		// int _numberOfItems = Random.Range(minItemsToFecth, maxItemsToFetch + 1);
-        // for (int i = 0; i < _numberOfItems; i++) {
-        //     var randItem = (ItemNames)Random.Range(0, System.Enum.GetValues(typeof(ItemNames)).Length);
-        //     CreateItem(randItem);
-            CreateItem(ItemNames.Water);
-        // }
+		int _numberOfItems = Random.Range(minItemsToFecth, maxItemsToFetch + 1);
+        for (int i = 0; i < _numberOfItems; i++) {
+            var randItem = (ItemNames)Random.Range(0, System.Enum.GetValues(typeof(ItemNames)).Length);
+            CreateItem(randItem);
+            //CreateItem(ItemNames.Water);
+        }
     }
 
 	void CreateItem (ItemNames _name) {
