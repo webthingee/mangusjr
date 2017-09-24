@@ -25,7 +25,7 @@ public class CharacterAttr : MonoBehaviour {
         {
             Destroy(this.gameObject);
         }
-        if (this.tag == "Player" && this.charHealth <= 0)
+        if ((this.tag == "Player" || this.tag == "Home") && this.charHealth <= 0)
         {
             GameObject.Find("Game Manager").GetComponent<GameCtrl>().EndGame();
         }
