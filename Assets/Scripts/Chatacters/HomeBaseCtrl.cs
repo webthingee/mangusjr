@@ -91,8 +91,9 @@ public class HomeBaseCtrl : MonoBehaviour {
             GameObject.Find("Albertus").GetComponent<CharacterAttr>().CharHealthChange = successBoost;
             gameCtrl.HUD.GetComponent<HUDCtrl>().itemsList.text = "";
             gameCtrl.HUD.GetComponent<HUDCtrl>().messagehDisplay.text = 
-            "Al: Not Bad, eat these \n" +
-            "they give a health boost] \n" +
+            "Al says: \n" +
+            "Not Bad, eat these \n" +
+            "they give a health boost \n" +
             "Next I need...";
             
             Invoke("CreateRequestItemsList", 4f);
