@@ -15410,7 +15410,7 @@ MonoBehaviour:
   messagehDisplay: {fileID: 1889419453}
   AlsHealthDisplay: {fileID: 432516962}
   goalDisplay: {fileID: 1519667308}
-  goalGoal: 1
+  goalGoal: 3
   scoreTotal: 0
   goalTotal: 0
 --- !u!4 &2022151483
