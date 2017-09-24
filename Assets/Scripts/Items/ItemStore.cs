@@ -15,14 +15,6 @@ public class ItemStore : MonoBehaviour {
         hh = GameObject.Find("Hero Holding");
     }
 
-    void Update ()
-    {
-        if (Input.GetKeyDown(KeyCode.R)) {
-            Debug.Log(hh.transform.childCount - 1);
-            //AddItem();
-        }
-    }
-
     void OnTriggerExit2D (Collider2D other)
     {
         if (other.tag == "Player") {

@@ -5,6 +5,10 @@ using UnityEngine;
 public class HomeBaseCtrl : MonoBehaviour {
 
 	public List<string> requestedItems = new List<string>();
+    public int minItemsToFecth = 1;
+    public int maxItemsToFetch = 5;
+    public int successBoost = 25;
+
     GameCtrl gameCtrl;
     HeroHoldingCtrl hhCtrl;
 
@@ -20,10 +24,11 @@ public class HomeBaseCtrl : MonoBehaviour {
 
 	void CreateRequestItemsList ()
 	{
-		int _numberOfItems = Random.Range(1, 6);
+		int _numberOfItems = Random.Range(minItemsToFecth, maxItemsToFetch + 1);
         for (int i = 0; i < _numberOfItems; i++) {
             var randItem = (ItemNames)Random.Range(0, System.Enum.GetValues(typeof(ItemNames)).Length);
-            CreateItem(randItem);
+            //CreateItem(randItem);
+            CreateItem(ItemNames.Water);
         }
     }
 
@@ -80,18 +85,25 @@ public class HomeBaseCtrl : MonoBehaviour {
         else {
             Debug.Log("You Did It");
             gameCtrl.GoalChange = 1;
-            GameObject.Find("MagnusJR").GetComponent<CharacterAttr>().CharHealthChange = 50;
-            gameCtrl.HUD.GetComponent<HUDCtrl>().itemsList.text = 
+            GameObject.Find("MagnusJR").GetComponent<CharacterAttr>().CharHealthChange = successBoost;
+            GameObject.Find("Albertus").GetComponent<CharacterAttr>().CharHealthChange = successBoost;
+            gameCtrl.HUD.GetComponent<HUDCtrl>().itemsList.text = "";
+            gameCtrl.HUD.GetComponent<HUDCtrl>().messagehDisplay.text = 
             "Not Bad \n" +
-            "Eat this \n" +
-            "... health boost \n" +
+            "Let's eat these \n" +
+            "(health boost) \n" +
             "NOW GET ME..." 
             ;
             
-            Invoke("CreateRequestItemsList", 5f);
+            Invoke("CreateRequestItemsList", 4f);
+            Invoke("ClearMessages", 5f);
         }
 
         hhCtrl.heroHolding.Clear();
+    }
+
+    void ClearMessages () {
+        gameCtrl.HUD.GetComponent<HUDCtrl>().messagehDisplay.text = "";
     }
 
 }

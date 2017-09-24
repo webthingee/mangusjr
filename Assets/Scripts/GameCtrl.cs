@@ -10,6 +10,7 @@ public class GameCtrl : MonoBehaviour {
     public GameObject HUD;
     public Text scoreDisplay;
     public Text healthDisplay;
+    public Text messagehDisplay;
     public Text AlsHealthDisplay;
     public Text goalDisplay;
     public int goalGoal;

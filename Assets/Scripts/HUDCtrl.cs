@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class HUDCtrl : MonoBehaviour {
 
 	public Text itemsList;
-	string updatedItemsList;
+    public Text messagehDisplay;
+    string updatedItemsList;
 
 	public void UpdateRequestList ()
 	{		
