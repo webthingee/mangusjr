@@ -27,8 +27,8 @@ public class HomeBaseCtrl : MonoBehaviour {
 		int _numberOfItems = Random.Range(minItemsToFecth, maxItemsToFetch + 1);
         for (int i = 0; i < _numberOfItems; i++) {
             var randItem = (ItemNames)Random.Range(0, System.Enum.GetValues(typeof(ItemNames)).Length);
-            //CreateItem(randItem);
-            CreateItem(ItemNames.Water);
+            CreateItem(randItem);
+            //CreateItem(ItemNames.Water);
         }
     }
 

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
 
 public class BasicMovement : MonoBehaviour
 {
@@ -11,11 +12,13 @@ public class BasicMovement : MonoBehaviour
     [SerializeField] private Direction setDirection; // request for a give direction
     [SerializeField] private Vector3 leaderMovedAt; // Where the leader was when direction was changed
     [SerializeField] private Vector3 moveVector; // Vector3 with up, down, left or right
+    Animator anim;
 
     void OnEnable()
     {
         moveSpeed = GetComponentInParent<MovementCtrl>().moveSpeed;
         timeBetweenMoves = GetComponentInParent<MovementCtrl>().timeBetweenMoves;
+        anim = GetComponentInChildren<Animator>();
     }
 
     void Start()
@@ -79,21 +82,29 @@ public class BasicMovement : MonoBehaviour
         {
             moveDirection = setDirection;
             moveVector = Vector3.up;
+            anim.SetInteger("WalkDirection", 0);
+            GetComponentInChildren<SpriteRenderer>().flipX = false;
         }
         if (setDirection == Direction.Down && moveDirection != Direction.Up)
         {
             moveDirection = setDirection;
             moveVector = Vector3.down;
+            anim.SetInteger("WalkDirection", 2);
+            GetComponentInChildren<SpriteRenderer>().flipX = false;
         }
         if (setDirection == Direction.Right && moveDirection != Direction.Left)
         {
             moveDirection = setDirection;
             moveVector = Vector3.right;
+            anim.SetInteger("WalkDirection", 1);
+            GetComponentInChildren<SpriteRenderer>().flipX = true;
         }
         if (setDirection == Direction.Left && moveDirection != Direction.Right)
         {
             moveDirection = setDirection;
             moveVector = Vector3.left;
+            anim.SetInteger("WalkDirection", 1);
+            GetComponentInChildren<SpriteRenderer>().flipX = false;
         }
     }
 

@@ -24,7 +24,7 @@ public class FireCtrl : MonoBehaviour {
 
         if (this.tag == "EnemyBullet" && other.tag == "Home")
         {
-            Debug.Log(other.name);
+            //Debug.Log(other.name);
             Shoot(other.gameObject);
         }
 
