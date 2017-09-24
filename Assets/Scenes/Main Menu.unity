@@ -1508,8 +1508,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.5
-  m_Text: "Welcome! \nAl will tell you what he needs so he can transform the blades
-    of grassinto the gold you need. Why do you need gold? \nThat's a long story...
+  m_Text: "Welcome! \nAlbertus will tell you what he needs so he can transform the
+    blades of grassinto the gold you need. Why do you need gold? \nThat's a long story...
     \nlet me tell you about it along the way..."
 --- !u!222 &1605480673
 CanvasRenderer:

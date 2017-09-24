@@ -24,12 +24,12 @@ public class HomeBaseCtrl : MonoBehaviour {
 
 	void CreateRequestItemsList ()
 	{
-		int _numberOfItems = Random.Range(minItemsToFecth, maxItemsToFetch + 1);
-        for (int i = 0; i < _numberOfItems; i++) {
-            var randItem = (ItemNames)Random.Range(0, System.Enum.GetValues(typeof(ItemNames)).Length);
-            CreateItem(randItem);
-            //CreateItem(ItemNames.Water);
-        }
+		// int _numberOfItems = Random.Range(minItemsToFecth, maxItemsToFetch + 1);
+        // for (int i = 0; i < _numberOfItems; i++) {
+        //     var randItem = (ItemNames)Random.Range(0, System.Enum.GetValues(typeof(ItemNames)).Length);
+        //     CreateItem(randItem);
+            CreateItem(ItemNames.Water);
+        // }
     }
 
 	void CreateItem (ItemNames _name) {
@@ -91,11 +91,9 @@ public class HomeBaseCtrl : MonoBehaviour {
             GameObject.Find("Albertus").GetComponent<CharacterAttr>().CharHealthChange = successBoost;
             gameCtrl.HUD.GetComponent<HUDCtrl>().itemsList.text = "";
             gameCtrl.HUD.GetComponent<HUDCtrl>().messagehDisplay.text = 
-            "Al: Not Bad \n" +
-            "Let's eat these \n" +
-            "[health boost] \n" +
-            "NOW GET ME..." 
-            ;
+            "Al: Not Bad, eat these \n" +
+            "they give a health boost] \n" +
+            "Next I need...";
             
             Invoke("CreateRequestItemsList", 4f);
             Invoke("ClearMessages", 5f);

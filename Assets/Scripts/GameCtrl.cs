@@ -8,6 +8,7 @@ public class GameCtrl : MonoBehaviour {
 
 	public GameObject inGameCanvas;
     public GameObject HUD;
+    public GameObject winCanvas;
     public Text scoreDisplay;
     public Text healthDisplay;
     public Text messagehDisplay;
@@ -90,6 +91,7 @@ public class GameCtrl : MonoBehaviour {
     public void WinGame ()
     {
         Debug.Log("WINNER");
+        winCanvas.SetActive(true);
         Time.timeScale = 0f;
     }
 }
