@@ -10,7 +10,7 @@ public class ObstacleCtrl : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.tag == "Player" && useTrigger) {
-			Debug.Log("Triggered by " + this.name);
+			//Debug.Log("Triggered by " + this.name);
 			GameObject.Find("Game Manager").GetComponent<GameCtrl>().EndGame();
 		}
 	}
@@ -18,7 +18,7 @@ public class ObstacleCtrl : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D other)
 	{
         if (other.collider.tag == "Player" && useCollision) {
-            Debug.Log("Collision by " + this.name);
+            //Debug.Log("Collision by " + this.name);
             GameObject.Find("Game Manager").GetComponent<GameCtrl>().EndGame();
         }	
 	}

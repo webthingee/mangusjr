@@ -72,6 +72,16 @@ public class GameCtrl : MonoBehaviour {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
 
+    public void NewStartGame()
+    {
+        SceneManager.LoadScene("Level_01");
+    }
+
+    public void QuitGame ()
+    {
+        Application.Quit();
+    }
+
     public void EndGame ()
     {
         inGameCanvas.SetActive(true);

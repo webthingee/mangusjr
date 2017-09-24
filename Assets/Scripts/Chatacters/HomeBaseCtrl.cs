@@ -73,7 +73,7 @@ public class HomeBaseCtrl : MonoBehaviour {
 
     void DestroyItem (ItemCtrl _go)
     {
-        gameCtrl.ScoreChange = _go.pointScored;
+        //gameCtrl.ScoreChange = _go.pointScored;
         Destroy(_go.gameObject);
     }
 
@@ -81,6 +81,8 @@ public class HomeBaseCtrl : MonoBehaviour {
     {
         if (requestedItems.Count > 0) {
             Debug.Log("You Fool, That's Not Right!");
+            gameCtrl.HUD.GetComponent<HUDCtrl>().messagehDisplay.text = "Unloalding... \n Al: Where's the rest?";
+            Invoke("ClearMessages", 5f);
         }
         else {
             Debug.Log("You Did It");
@@ -89,9 +91,9 @@ public class HomeBaseCtrl : MonoBehaviour {
             GameObject.Find("Albertus").GetComponent<CharacterAttr>().CharHealthChange = successBoost;
             gameCtrl.HUD.GetComponent<HUDCtrl>().itemsList.text = "";
             gameCtrl.HUD.GetComponent<HUDCtrl>().messagehDisplay.text = 
-            "Not Bad \n" +
+            "Al: Not Bad \n" +
             "Let's eat these \n" +
-            "(health boost) \n" +
+            "[health boost] \n" +
             "NOW GET ME..." 
             ;
             

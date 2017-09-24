@@ -672,6 +672,16 @@ Prefab:
       propertyPath: m_Radius
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 114780365281858872, guid: 0614aaf2129da4f16a91294a1f0d0149,
+        type: 2}
+      propertyPath: charHealth
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 95897947245898134, guid: 0614aaf2129da4f16a91294a1f0d0149,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0614aaf2129da4f16a91294a1f0d0149, type: 2}
   m_IsPrefabParent: 0
@@ -1892,7 +1902,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -10}
-  m_SizeDelta: {x: 160, y: 35}
+  m_SizeDelta: {x: 160, y: 44.88}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &361352445
 MonoBehaviour:
@@ -1914,7 +1924,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 513571ecbc56a435e88bda9c8da74b50, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -1925,7 +1935,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
+    m_LineSpacing: 0.5
   m_Text: 'Mangus!
 
     Get These Now!!'
@@ -2474,7 +2484,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 513571ecbc56a435e88bda9c8da74b50, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -2485,7 +2495,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
+    m_LineSpacing: 0.5
   m_Text: 999
 --- !u!222 &407240647
 CanvasRenderer:
@@ -2725,7 +2735,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 513571ecbc56a435e88bda9c8da74b50, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -2736,7 +2746,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
+    m_LineSpacing: 0.5
   m_Text: 777
 --- !u!222 &432516963
 CanvasRenderer:
@@ -6211,7 +6221,6 @@ Transform:
   - {fileID: 538914850}
   - {fileID: 449474844}
   - {fileID: 32478376}
-  - {fileID: 1922237632}
   - {fileID: 1369013482}
   m_Father: {fileID: 1195122566}
   m_RootOrder: 2
@@ -7064,6 +7073,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3065df21f5f104e53af28efb042fbe40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  message: {fileID: 1656639522}
+  start: 0
+  dead: 0
 --- !u!114 &925779240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7685,7 +7697,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 200}
-  m_SizeDelta: {x: 400, y: 50}
+  m_SizeDelta: {x: 800, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1002244504
 MonoBehaviour:
@@ -7707,19 +7719,19 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_Font: {fileID: 12800000, guid: 513571ecbc56a435e88bda9c8da74b50, type: 3}
+    m_FontSize: 44
     m_FontStyle: 0
     m_BestFit: 1
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
+    m_MinSize: 33
+    m_MaxSize: 200
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: The Rise of Magnus Jr
+    m_LineSpacing: 0.5
+  m_Text: The Rise of  Magnus Jr
 --- !u!222 &1002244505
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7877,6 +7889,16 @@ Prefab:
         type: 2}
       propertyPath: m_Color.b
       value: 0.9647059
+      objectReference: {fileID: 0}
+    - target: {fileID: 114780365281858872, guid: 0614aaf2129da4f16a91294a1f0d0149,
+        type: 2}
+      propertyPath: charHealth
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 95897947245898134, guid: 0614aaf2129da4f16a91294a1f0d0149,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0614aaf2129da4f16a91294a1f0d0149, type: 2}
@@ -8355,6 +8377,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 212289225070583754, guid: 466cf24b430504d84bd44abc94103608,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0.8897059
+      objectReference: {fileID: 0}
+    - target: {fileID: 212289225070583754, guid: 466cf24b430504d84bd44abc94103608,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0.8897059
+      objectReference: {fileID: 0}
+    - target: {fileID: 212289225070583754, guid: 466cf24b430504d84bd44abc94103608,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0.8897059
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 466cf24b430504d84bd44abc94103608, type: 2}
   m_IsPrefabParent: 0
@@ -8513,7 +8550,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 513571ecbc56a435e88bda9c8da74b50, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -8524,7 +8561,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
+    m_LineSpacing: 0.5
   m_Text: Your Health
 --- !u!222 &1169099149
 CanvasRenderer:
@@ -8543,7 +8580,7 @@ GameObject:
   - component: {fileID: 1172418434}
   - component: {fileID: 1172418433}
   m_Layer: 5
-  m_Name: Main Btn Text
+  m_Name: Quit Btn Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8599,7 +8636,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Main
+  m_Text: Quit
 --- !u!222 &1172418434
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9446,7 +9483,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 513571ecbc56a435e88bda9c8da74b50, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -9457,7 +9494,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
+    m_LineSpacing: 0.5
   m_Text: Creations
 --- !u!222 &1313798011
 CanvasRenderer:
@@ -9578,7 +9615,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4532948754754486, guid: 24ef3339312424a47b9a63a5ce72861e, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.44
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4532948754754486, guid: 24ef3339312424a47b9a63a5ce72861e, type: 2}
       propertyPath: m_LocalPosition.y
@@ -9606,7 +9643,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4532948754754486, guid: 24ef3339312424a47b9a63a5ce72861e, type: 2}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 1687570342686260, guid: 24ef3339312424a47b9a63a5ce72861e, type: 2}
       propertyPath: m_Name
@@ -10380,7 +10417,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 513571ecbc56a435e88bda9c8da74b50, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -10391,7 +10428,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
+    m_LineSpacing: 0.5
   m_Text: 888
 --- !u!222 &1508315497
 CanvasRenderer:
@@ -10454,7 +10491,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 513571ecbc56a435e88bda9c8da74b50, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -10465,7 +10502,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
+    m_LineSpacing: 0.5
   m_Text: 0 of 2
 --- !u!222 &1519667309
 CanvasRenderer:
@@ -11416,7 +11453,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 513571ecbc56a435e88bda9c8da74b50, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
@@ -11427,14 +11464,8 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Lucas ipsum dolor sit amet darth biggs skywalker binks darth jade yavin
-    darth moff jango. Utapau yoda darth yoda coruscant darth dooku. Mace jade solo
-    qui-gon lando vader droid. Ben chewbacca skywalker droid owen. Qui-gon fett hutt
-    sidious palpatine. Leia ewok leia dagobah coruscant mon c-3po yoda. Hutt bothan
-    leia ben gonk jango ventress leia dagobah. Kashyyyk vader solo mustafar binks
-    skywalker solo mara grievous. Coruscant solo darth lando jawa skywalker ventress
-    organa skywalker. Ben binks skywalker kamino moff obi-wan yavin jade.
+    m_LineSpacing: 0.5
+  m_Text: Today you did not succeed. But this is a video game, so you get to try again.
 --- !u!222 &1656639523
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11950,6 +11981,16 @@ Prefab:
       propertyPath: m_Color.b
       value: 0.9647059
       objectReference: {fileID: 0}
+    - target: {fileID: 114780365281858872, guid: 0614aaf2129da4f16a91294a1f0d0149,
+        type: 2}
+      propertyPath: charHealth
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 95897947245898134, guid: 0614aaf2129da4f16a91294a1f0d0149,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0614aaf2129da4f16a91294a1f0d0149, type: 2}
   m_IsPrefabParent: 0
@@ -12154,7 +12195,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 513571ecbc56a435e88bda9c8da74b50, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
@@ -12165,7 +12206,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
+    m_LineSpacing: 0.5
   m_Text: 
 --- !u!222 &1711898795
 CanvasRenderer:
@@ -12301,8 +12342,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -25, y: 0}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchoredPosition: {x: -25, y: 36.7}
+  m_SizeDelta: {x: 150, y: 223.4}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &1748058022
 MonoBehaviour:
@@ -13447,7 +13488,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 513571ecbc56a435e88bda9c8da74b50, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
@@ -13458,7 +13499,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
+    m_LineSpacing: 0.5
   m_Text: 
 --- !u!222 &1889419454
 CanvasRenderer:
@@ -13615,65 +13656,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4818819777744770, guid: ba1701f0ebbe94e4ab1b6db9d9c8ea13,
     type: 2}
   m_PrefabInternal: {fileID: 1207731422}
---- !u!1001 &1922237631
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 832807429}
-    m_Modifications:
-    - target: {fileID: 4532948754754486, guid: 24ef3339312424a47b9a63a5ce72861e, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0.84
-      objectReference: {fileID: 0}
-    - target: {fileID: 4532948754754486, guid: 24ef3339312424a47b9a63a5ce72861e, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 4.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 4532948754754486, guid: 24ef3339312424a47b9a63a5ce72861e, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4532948754754486, guid: 24ef3339312424a47b9a63a5ce72861e, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4532948754754486, guid: 24ef3339312424a47b9a63a5ce72861e, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4532948754754486, guid: 24ef3339312424a47b9a63a5ce72861e, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4532948754754486, guid: 24ef3339312424a47b9a63a5ce72861e, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4532948754754486, guid: 24ef3339312424a47b9a63a5ce72861e, type: 2}
-      propertyPath: m_RootOrder
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 1687570342686260, guid: 24ef3339312424a47b9a63a5ce72861e, type: 2}
-      propertyPath: m_Name
-      value: Rocks (12)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4532948754754486, guid: 24ef3339312424a47b9a63a5ce72861e, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4532948754754486, guid: 24ef3339312424a47b9a63a5ce72861e, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 24ef3339312424a47b9a63a5ce72861e, type: 2}
-  m_IsPrefabParent: 0
---- !u!4 &1922237632 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4532948754754486, guid: 24ef3339312424a47b9a63a5ce72861e,
-    type: 2}
-  m_PrefabInternal: {fileID: 1922237631}
 --- !u!1 &1925891231
 GameObject:
   m_ObjectHideFlags: 0
@@ -13729,7 +13711,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 513571ecbc56a435e88bda9c8da74b50, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -13740,7 +13722,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
+    m_LineSpacing: 0.5
   m_Text: Al's Helath
 --- !u!222 &1925891234
 CanvasRenderer:
@@ -14042,7 +14024,7 @@ GameObject:
   - component: {fileID: 1982197761}
   - component: {fileID: 1982197760}
   m_Layer: 5
-  m_Name: Main Btn
+  m_Name: Quit Btn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14105,7 +14087,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1982197761}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2022151482}
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1982197761
@@ -14217,6 +14210,16 @@ Prefab:
         type: 2}
       propertyPath: m_Radius
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114780365281858872, guid: 0614aaf2129da4f16a91294a1f0d0149,
+        type: 2}
+      propertyPath: charHealth
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 95897947245898134, guid: 0614aaf2129da4f16a91294a1f0d0149,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0614aaf2129da4f16a91294a1f0d0149, type: 2}
@@ -14532,7 +14535,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 513571ecbc56a435e88bda9c8da74b50, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -14543,7 +14546,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
+    m_LineSpacing: 0.5
   m_Text: 999
 --- !u!222 &2009176547
 CanvasRenderer:
